@@ -1,0 +1,8 @@
+mixin breadCrump(links)
+  nav.flex.gap-2.text-sm.text-slate-500
+    each linkObj, index in links
+      if index != links.length - 1
+        a(href=`${linkObj.link}`, class="hover:text-blue-300 transition-all") #{linkObj.name}
+        p / 
+      else
+        p(class="select-none") #{linkObj.name}

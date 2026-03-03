@@ -83,10 +83,11 @@ const limiterForAPI = rateLimit({
 app.use("/api", limiterForAPI);
 
 const limiter = rateLimit({
-  max: 1000,
+  max: process.env.NODE_ENV === "development" ? 1000 ** 3 : 1000,
   windowMs: 60 * 60 * 1000,
   message: "<h1>Too many request, please try again in an hour!</h1>",
 });
+
 app.use("/", limiter);
 
 app.use("/", viewRouter);

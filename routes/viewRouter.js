@@ -4,6 +4,9 @@ const viewsController = require("../controllers/viewController");
 const router = express.Router();
 
 router.get("/", viewsController.getLandingPage);
+router.get("/about", viewsController.getAboutPage);
+router.get("/privacy", viewsController.getPrivacyPage);
+router.get("/publisher", viewsController.getPublisherPage);
 
 // router.use(authController.isLoggedIn);
 

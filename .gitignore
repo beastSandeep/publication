@@ -1,2 +1,5 @@
 node_modules/
-rm -f ./.git/index.lock
+research/
+*.excalidraw
+*.pur
+#rm -f ./.git/index.lock

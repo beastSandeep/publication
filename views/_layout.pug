@@ -1,0 +1,33 @@
+include ./comps/mixin
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1")
+    link(rel="icon", href="/images/favicon.jpg", type="image/jpg")
+    //-link(rel="canonical" href=`${canonicalURL}`)
+    //-meta(itemprop='url', content='https:///')
+    //-meta(itemprop='name', content='Publication')
+    title= `${title}`
+    block header
+    //-meta(name="keywords", content="")
+    //-meta(name="description", content=`${pageDesc}`)
+    //-meta(property="og:title", content=`${title}`)
+    //-meta(property="og:site_name", content="Publication.com")
+    //-meta(property="og:url", content="https:///")
+    //-meta(property="og:description", content=`${pageDesc}`)
+    //-meta(property="og:type", content="website")
+    //-meta(property="og:image", content="https://www.Publication.com/ogImage/jobilandOg.png")
+
+    link(href="/styles/style.css", rel="stylesheet")
+  body
+    main(class="w-[60%] border-[1px] border-gray-100 mx-auto my-8 shadow-lg")
+      include ./comps/loginAndRegister
+      include ./comps/navbar
+      section.flex
+        div.relative(class="w-[75%] p-7")
+          block main
+        div.relative.border-l.border-slate-200(class="w-[25%] p-7")
+          include ./comps/sidePannel
+      include ./comps/footer

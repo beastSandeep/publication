@@ -1,0 +1,18 @@
+mixin block(link,title,description)
+  .bg-white.p-4.flex.flex-col.gap-3.items-center.border.border-slate-200.max-w-xs.w-xs.shadow-md
+    img(src=`${link}`, alt="title", class="w-8")
+    h5.text-center.font-semibold #{title}
+    p.text-center.text-sm #{description}
+
+
+section.flex.flex-col.px-8.py-10.gap-10.bg-slate-50.border-t.border-slate-200
+  .flex.gap-10
+    +block("/images/svg/search.svg", "Google Searchable", "All published articles are indexed and searchable on Google and other search engines.")
+    +block("/images/svg/badge.svg", "ISSN & DOI", "Registered ISSN: with DOI for every published paper.")
+    +block("/images/svg/globe.svg", "World-Class Editorial Team", "Editors & reviewers from over 20+ countries.")
+  .flex.flex-col.items-center.gap-2
+    img(src="/images/attribution.png", alt="Attribution")
+    p
+      span.text-blue-400 © 
+      | 2025 The Author(s). This work is licensed under a 
+      a(href="#", class="text-blue-400 hover:underline") Creative Commons Attribution-NonCommercial 4.0 International License
