@@ -1,0 +1,15 @@
+extends _layout
+
+block main
+  +breadCrump([{name:"Home", link:"/"}, {name:"Authors", link:"/authors"}])
+  h2.title Information For Authors
+  p.base-text Interested in submitting to this journal? We recommend that you review the 
+    a(href="/about", class="text-blue-500 hover:underline") About the Journal 
+    | page for the journal's section policies, as well as the 
+    a(href="/author-instructions", class="text-blue-500 hover:underline") Author Guidelines
+    |. Authors need to 
+    a(href="/register", class="text-blue-500 hover:underline") register 
+    |with the journal prior to submitting or, if already registered, can simply 
+    a(href="/login", class="text-blue-500 hover:underline") log in 
+    |and begin the five-step process.
+

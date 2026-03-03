@@ -1,0 +1,115 @@
+extends _layout
+
+block main
+  +breadCrump([{name:"Home", link:"/"}, {name:"Author Instructions", link:"/author-instructions"}])
+  h2.title Author Instructions
+  p.base-text Authors are required to read these instructions very carefully and prepare their paper according to the below findings.
+  p.base-text All submissions should be sent to email: 
+    a(href="mailto:editor.jcrp@gmail.com", class="text-blue-500 hover:underline") editor.jcrp@gmail.com 
+    | or through IJMRR Submission (
+    a(href="https://www.ijmrr.com/submission", class="text-blue-500 hover:underline") Click Here
+    | ).
+    br
+    | The submission hasn't been published before and isn't being considered by another journal.
+    br
+    | The submission file is in Microsoft Word format.
+    br
+    | In the text, references should be mentioned by a superscript, such as [1], [2], etc., in descending sequence from the introduction to the conclusion.
+    br
+    | Every submission should have title and abstracts in English language only.
+    br
+    | Scientific name should be italic and specify the scientific family name.
+  
+  h4.title
+    em Checklist to preparing submission file
+  
+  ol(class="list-decimal list-inside")
+    li Title - Short & informative
+    li Abstract - 1 paragraph (200-250 words)
+    li Keywords - 5 to 7
+    li Introduction - 1/2 - 1 page
+    li Materials and Methods - 1-2 pages
+    li Results - 2-3 pages
+    li Discussion - 1-2 pages
+    li Conclusion - 1 paragraph (200-250 words)
+    li Acknowledgements (Author's Contributions, Funding Source)
+    li Conflict of Interest (compulsory)
+    li References - 10-30 (2-4 pages)
+    li Tables - 6-8 (one per page)
+    li Figures
+
+  ul(class="flex flex-col gap-3 mt-5")
+    l1
+      strong Abstract: 
+      span The abstract should not exceed 300 words and should include the following: In the abstract, evade employing any acronyms. The usage of taxonomic authorities is not appropriate here. The abstract should not cite any sources.
+    l1
+      strong Keyword: 
+      span Three to six keywords should be placed after the abstract.
+    l1
+      strong Introduction: 
+      span This section should outline the study's chosen main issue along with any pertinent prior research and any suggested approaches. The text should be supported by appropriate references.
+
+    l1
+      strong Materials and Methods: 
+      span This section should contain sufficient detail, so that all experimental procedures can be reproduced, and include references. Methods, however, that have been published in detail elsewhere should not be described in detail. Authors should provide the name of the manufacturer and their location for any specifically named medical equipment and instruments, and all drugs should be identified by their pharmaceutical names, and by their trade name if relevant.
+
+    l1
+      strong Resources and Procedures: 
+      span The specific experimental procedures, tools, and software utilised in the study should be listed here with the appropriate citations. Additionally, the specifics of the study field should be given.
+    l1
+      strong Results: 
+      span the author should give the results of the experiment or study here in a clear and simple manner. The past tense is the proper one to use.
+
+    l1
+      strong Discussion: 
+      span With the aid of past work and publications, the study should be thoroughly explored along with the importance of the findings.
+
+    l1
+      strong Conclusion: 
+      span The major findings of the work highlighting its importance, relevance and their usefulness of the study shall be summarized. The conclusions of this study must discuss a short summary and further scope in the field should describe in this context.
+
+    l1
+      strong Acknowledgments: 
+      span It is important to acknowledge the funding source, institutional leader, coworkers, field helpers, local residents, etc., and to disclose any potential conflicts of interest.
+    l1
+      strong Conflicts of interest: 
+      span If there are any competing financial interests with respect to the study presented, authors are required to disclose them. This data must be provided at this time and will be included in the publication. Additionally, a conflict of interest should be disclosed in the submission procedure and in the supplemental covering letter.
+
+    l1
+      strong References: 
+      span References must be formatted in Vancouver style and numbered consecutively in the text according to their initial mentions. The references should not be cited in the abstract. In order from the Introduction to the Discussion, cite the references in the text using the proper number and superscript, such as [1], [2, 3], [4-6], [7, 8-10]. Avoid using the same reference numbers repeatedly. Square brackets should surround the reference numbers. References that are only mentioned in table or figure legends should be numbered in the order defined by the first identification in the relevant table or figure's text. Do not cite any references in the conclusion section and refrain from using abstracts as sources.
+
+  h4.title-blue Examples:
+
+  h4.title-red
+    em Journal article
+  p.text-base Author(s). Title of the article. Title of the Journal. Year of Publication;Volume(Issue):Page Numbers. DOI (if available).
+  p.base-text-red Smith J, Brown A, Taylor C. Innovative Approaches to Climate Change Adaptation in Urban Areas. Journal of Environmental Management. 2023;67(4):123-135. https://doi.org/10.1016/j.jenvman.2023.123456.
+
+  h4.title-red
+    em Book Chapter
+  p.text-base Author(s) of the Chapter. Title of the Chapter. In: Editor(s), editor(s). Title of the Book. Place of Publication: Publisher; Year of Publication. p. Page Numbers.
+  p.base-text-red Doe J, Smith R. Recent Advances in Data Analysis Techniques. In: Johnson M, Lee K, editors. Modern Data Science Methods. New York: Springer; 2023. p. 45-67.
+
+  h4.title-red
+    em Book
+  p.text-base Author(s). Title of the Book. Edition (if applicable). Place of Publication: Publisher; Year of Publication.
+  p.base-text-red Brown P, Green T. Introduction to Environmental Science. 2nd ed. New York: Cambridge University Press; 2021.
+
+  h4.title-red
+    em Website
+  p.text-base Author(s). Title of the Webpage. Title of the Website. Publication Date (or Updated Date). URL. Accessed Date.
+  p.base-text-red National Institute of Health. Understanding Clinical Trials. NIH. 2023 Jul 15. https://www.nih.gov/understanding-clinical-trials. Accessed 2024 Aug 10.
+
+  h4.title-red
+    em Govt Reports
+  p.text-base Author(s). Title of the Report. Report Number (if applicable). Place of Publication: Publisher; Year of Publication.
+  p.base-text-red Centers for Disease Control and Prevention. Annual Report on Vaccine Coverage. CDC Report No. 2023-01. Atlanta: Centers for Disease Control and Prevention; 2023.
+
+
+
+
+
+
+
+

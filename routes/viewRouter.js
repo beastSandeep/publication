@@ -4,9 +4,41 @@ const viewsController = require("../controllers/viewController");
 const router = express.Router();
 
 router.get("/", viewsController.getLandingPage);
+
+// about
 router.get("/about", viewsController.getAboutPage);
 router.get("/privacy", viewsController.getPrivacyPage);
 router.get("/publisher", viewsController.getPublisherPage);
+
+router.get("/editorial-team", viewsController.getEditorialTeamPage);
+
+// review
+router.get("/review-policy", viewsController.getReviewPolicyPage);
+
+// author guide
+router.get("/submissions", viewsController.getSubmissionsPage);
+router.get("/author-instructions", viewsController.getAuthorInstructionsPage);
+router.get("/reference-management", viewsController.getReferenceManagementPage);
+router.get("/apply-editor", viewsController.getApplyEditorPage);
+router.get("/aim-and-scope", viewsController.getAimAndScopePage);
+
+router.get("/indexing", viewsController.getIndexingPage);
+
+// side pannel links
+router.get("/scope", viewsController.getScopePage);
+router.get("/open-access", viewsController.getOpenAccessPage);
+router.get("/ethics", viewsController.getEthicsPage);
+router.get("/competing-interest", viewsController.getCompetingInterestPage);
+router.get("/human-animal-rights", viewsController.getHumanAnimalRightsPage);
+router.get("/reviewers-guidelines", viewsController.getReviewersGuidelinesPage);
+router.get("/plagiarism-policy", viewsController.getPlagiarismPolicyPage);
+router.get("/archive-policy", viewsController.getArchivePolicyPage);
+router.get("/advertisement-policy", viewsController.getAdvertisementPolicyPage);
+router.get("/disclaimer", viewsController.getDisclaimerPage);
+
+router.get("/readers", viewsController.getReadersPage);
+router.get("/authors", viewsController.getAuthorsPage);
+router.get("/librarians", viewsController.getLibrariansPage);
 
 // router.use(authController.isLoggedIn);
 

@@ -1,0 +1,12 @@
+extends _layout
+
+block main
+  +breadCrump([{name:"Home", link:"/"}, {name:"Editorial Team", link:"/editorial-team"}])
+  div.flex.justify-between.items-center
+    h2.title Editorial Team
+    a(href="/apply-editor", class="text-gray-800 py-2 px-4 bg-blue-200 rounded-md hover:bg-blue-300 transition-all font-bold text-md uppercase") Apply for Editorial Board
+  
+  h4.title-red-center Assistant Editor
+  h4.title-red-center Reviewer
+  h4.title-red-center Advisory Board
+  p.sm-text The advisory board members along with Editor-in-Chief and Editorial Board members, suggest or advice measures to improve the visibility and reach of Journals. The Editor-in-Chief has full authority over the entire editorial content of the journal and the timing of publication of that content and Advisory Board do not have any interference by any means in the process of peer review and publication of manuscript

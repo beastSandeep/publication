@@ -76,7 +76,7 @@
     @apply border-b-4 w-fit border-amber-400 py-2 text-gray-500 text-base font-bold tracking-wider uppercase;
   }
 
-  #sidePannel > a.link {
+  #sidePannel > a.linkk {
     @apply text-blue-500 hover:underline font-normal hover:text-blue-600;
   }
 
@@ -98,6 +98,10 @@
     @apply text-red-700 my-5 font-bold text-lg tracking-wide uppercase;
   }
 
+  h3.title-blue {
+    @apply text-blue-700 my-5 font-bold text-lg tracking-wide uppercase;
+  }
+
   h4.title {
     @apply text-slate-800 my-5 font-bold text-base tracking-wide;
   }
@@ -110,9 +114,31 @@
     @apply text-red-700 my-5 font-bold text-base tracking-wide text-justify;
   }
 
+  a.title-red {
+    @apply text-red-700 my-5 font-bold text-base tracking-wide text-justify;
+  }
+
+  a.link {
+    @apply text-blue-500 my-5 text-base hover:underline;
+  }
+
+  h4.title-red-center {
+    @apply text-red-700 my-5 font-bold text-base tracking-wide text-center;
+  }
+
   span.base-text,
   p.base-text {
     @apply text-slate-800 my-5 text-justify;
+  }
+
+  span.base-text-red,
+  p.base-text-red {
+    @apply text-red-600 my-5 text-justify;
+  }
+
+  span.sm-text,
+  p.sm-text {
+    @apply text-slate-800 my-5 text-justify text-sm;
   }
 
   h5.title {

@@ -1,0 +1,80 @@
+extends _layout
+
+mixin listItem(name="", ...points)
+  li
+    strong.text-orange-500
+      em #{name}
+    ul(class="list-disc list-outside pl-10")
+      each point in points
+        li.text-sm #{point}
+
+
+block main
+  +breadCrump([{name:"Home", link:"/"}, {name:"Ethics", link:"/ethics"}])
+  h2.title Publication Ethics
+  p.base-text To preserve the honesty, excellence, and reliability of the research published in the International Journal of Creative Research and Publications, publication ethics are crucial. The obligations of editors, writers, and reviewers in respecting ethical standards are described in these principles. The Code of Conduct and Best-Practice Guidelines for Journal Editors (Committee on publishing Ethics, 2011) serve as the foundation for the publishing ethics and malpractice statement of the International Journal of Creative Research and Publications (IJCRP).
+
+  h3.title  Role of the Editor
+
+  ul.flex.flex-col.gap-5
+    +listItem("Editorial Independence", "Editors are in charge of preserving the journal's editorial independence and making sure that no other forces, such as business interests or political pressure, affect editorial choices.", "Editors must state any conflicts of interest and abstain from reviewing submissions in certain situations.")
+
+    +listItem("Fair and Impartial Review", "Editors must supervise an impartial and fair peer-review procedure. No matter the authors' name, nationality, or institutional connection, manuscripts should be judged on their scientific value, originality, and significance." ,"Editors should choose reviewers who are knowledgeable and capable of offering frank and constructive criticism.")
+
+    +listItem("Confidentiality", "Editors must uphold the privacy of submitted papers and safeguard the identity of authors and reviewers while the work is being reviewed.", "No personal benefit should be made from any sharing of confidential information collected during the evaluation process.")
+
+    +listItem("Publishing Decision", "Editors are in charge of deciding whether or not to publish an article in accordance with the guidelines and scope of the journal, the suggestions of the reviewers, and the scientific quality of the paper.", "Personal prejudices or conflicts of interest shouldn't be used as grounds for accepting or rejecting manuscripts.")
+
+    +listItem("Ethical Oversight", "Editors must keep an eye out for any possible ethical problems, such as data manipulation, plagiarism, and ethical lapses, and must respond appropriately when they are discovered.", "When there is suspicion of misbehaviour, editors should collaborate with writers to address the issues openly. When mistakes or ethical breaches are found in published work, editors should assist the release of corrections, retractions, or clarifications. Corrections should be done right away, and retractions should only be issued when required.")
+
+  h3.title-blue Role of the Author
+
+  ul.flex.flex-col.gap-5
+    +listItem("Originality and Plagiarism", "Authors must make sure that their work is unique and correctly credited. Self-plagiarism is prohibited, as is plagiarism in any other form.", "Proper credit must be given to all material, data, and previously published works.")
+
+    +listItem("Authorship and Contributorship", "Authors must satisfy the requirements for authorship based on significant contributions to the study and paper.", "All authors or proper acknowledgements should be provided for all contributors.", "Honorary authorship and ghostwriting are not encouraged.")
+
+    +listItem("Research Ethics", "Authors should conduct their studies in conformity with moral principles, such as the Helsinki Declaration for human research and the appropriate regulations for animal research.", "Human participants' informed permission is required, and animal research must have ethical clearance.")
+
+  p.base-text Financial, personal, or professional conflicts of interest that can affect their work or the way their findings are interpreted must be disclosed by authors. Reporting transparency is essential.
+
+  ul.flex.flex-col.gap-5
+    +listItem("Transparency and Data Sharing", "Authors should make available all pertinent data and details to enable others to duplicate their study.", "Datasets should, if feasible, be made accessible and shared in compliance with applicable laws.")
+
+    +listItem("Timeliness and Cooperation", "Authors must be on time and cooperative when editors and reviewers ask for changes or more information.", "Editorial collaboration is necessary for timely publishing.")
+
+    +listItem("Ethical Reporting", "Authors should accurately and truthfully present their findings, including both favourable and unfavourable outcomes.", "It is immoral to manipulate statistics or report just certain information.")
+  
+  h4.title-blue Role of the Reviewer
+
+  ul.flex.flex-col.gap-5
+    +listItem("Confidentiality", "Maintaining the review process' anonymity requires reviewers to keep all information regarding papers, including their existence, private from anyone not directly participating in the peer-reviewing process.", "Reviewers must not disclose any information about the manuscript or the review process to third parties.")
+
+    +listItem("Objectivity and Constructiveness", "Reviewers should offer objective, helpful, and unbiased input on the manuscript's advantages and disadvantages, and they should be honest about any personal biases or conflicts of interest that could affect their objectivity when they communicate with the editor.")
+
+    +listItem("Timeliness", "Reviewers need to finish their reviews by the predetermined deadline. They must immediately notify the editor if they will not make the deadline.")
+
+    +listItem("Ethical Considerations", "Reviewers should notify the editor of any ethical issues they see in the article, such as plagiarism, ethical violations, or data manipulation.", "They should also refrain from using concepts or data from the paper for their own study without the author's consent.")
+
+    +listItem("Conflict of Interest", "Reviewers must disclose any possible conflicts of interest they may have with the manuscript they are reviewing, and they must alert the editor if a conflict materialises.", "Conflicts of interest include financial, personal, or professional relationships that could influence the review process.")
+
+    +listItem("Suggestions for the Editor", "Reviewers should make suggestions to the editor that are specific, well-supported, and should state whether the manuscript should be accepted, changed, or rejected. They should also refrain from making disparaging or libellous remarks.")
+
+  p.base-text The legitimacy and dependability of the International Journal of Creative Research and Publications are largely dependent on these publishing ethical principles. The ethical conduct of research and the publication process in the field of pharmaceuticals are ensured by the authors', reviewers', and editors' adherence to these norms. When rules are broken, remedial measures may be taken, such as submissions being rejected, articles being retracted, or reports being made to the proper authorities.
+
+  h4.title-red Allegation of research misconduct
+
+  p.base-text Research misconduct refers to fabrication, falsification, citation manipulation, or plagiarism in the creation, performance, or review of research, the drafting of an article by authors, or in the reporting of research results. Editors have a duty to uphold the truth and integrity of the scientific record when authors are proven to have engaged in significant misconduct concerning research or other publications that have been published in scientific journals.
+  p.base-text The Editors and Editorial Board will apply the COPE's best practises where there is a suspicion of misconduct to help them resolve the issue and deal equitably with the infraction. Among other things, the Editors will look into the claim. Any paper that is submitted but is later discovered to include such misbehaviour will be disregarded. A retraction can be published and will be linked to the original article in circumstances where a published study is discovered to include such wrongdoing.
+  p.base-text Finding out if the claim is true and assessing whether it fits the description of research misconduct is the first stage. In this first phase, it is also necessary to look into any potential conflicts of interest that may exist between the people who are accused of misbehaviour.
+  p.base-text The charges are sent to the corresponding author, who is then asked to answer in-depth on behalf of all co-authors, if there is a chance that there was scientific misconduct or other significant research abnormalities. After the reply has been received and assessed, it may be subjected to further scrutiny and consultation with subject-matter experts (such as statisticians). Clarifications, more analyses, or both, published as letters to the editor, frequently including a correction notice and revision to the published article, are adequate in situations when it is doubtful that wrongdoing has taken place.
+  p.base-text Institutions are required to look into claims of scientific misconduct properly and completely. The veracity of the scientific record is ultimately a responsibility that falls on authors, journals, and organisations. The IJCRP will continue to carry out its duties of ensuring the validity and integrity of the scientific record by responding appropriately to concerns about scientific misconduct and taking necessary actions based on evaluation of these concerns, such as corrections, retractions with replacement, and retractions.
+
+
+  h4.title-red Grievances and Appeals
+  p.base-text IJCRP have a defined process for dealing with complaints about the publication, editorial staff, editorial board, or publisher. The complaints will be explained to the recognised individual with regard to the complaint case. The complaints' scope includes anything pertaining to the journal business process, such as the editorial process, finding citation manipulation, unfair editors/reviewers, peer-review manipulation, etc. The processing of the complaint cases shall follow COPE guidelines.
+
+  h4.title-red Ethical lapse
+  p.base-text To comply with ethical guidelines for research involving human and animal subjects, the author must explicitly identify any substances, people, animals, techniques, or equipment that have any unique dangers inherent in their usage in the publication. The association or legal organisation must, if requested, have legal and ethical approval from the authors.
+  p.base-text  Authors should explicitly explain whether or not the research will use secure storage for any private data or information if it does.
+

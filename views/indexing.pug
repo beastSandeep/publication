@@ -1,0 +1,11 @@
+extends _layout
+
+block main
+  +breadCrump([{name:"Home", link:"/"}, {name:"Indexing", link:"/indexing"}])
+
+  h3.title Abstracting & Indexing
+  p.base-text IJMESS is in the process to index in the various national and international databases, abstracting, libraries and catalogues.
+
+  div.border.border-gray-300.rounded-sm.p-5.my-5.w-fit
+    #frame.bg-white.p-3.rounded.drop-shadow-lg
+      img(src="/images/principals.jpg", alt="hight end laptop on a table with a cup of coffee", class="w-48 rounded-sm")

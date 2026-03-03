@@ -531,12 +531,12 @@ video {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
-#sidePannel > a.link {
+#sidePannel > a.linkk {
   font-weight: 400;
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
 }
-#sidePannel > a.link:hover {
+#sidePannel > a.linkk:hover {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity));
   text-decoration-line: underline;
@@ -603,6 +603,17 @@ h3.title-red {
   --tw-text-opacity: 1;
   color: rgb(185 28 28 / var(--tw-text-opacity));
 }
+h3.title-blue {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity));
+}
 h4.title {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
@@ -634,11 +645,62 @@ h4.title-red {
   --tw-text-opacity: 1;
   color: rgb(185 28 28 / var(--tw-text-opacity));
 }
+a.title-red {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  --tw-text-opacity: 1;
+  color: rgb(185 28 28 / var(--tw-text-opacity));
+}
+a.link {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+a.link:hover {
+  text-decoration-line: underline;
+}
+h4.title-red-center {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  --tw-text-opacity: 1;
+  color: rgb(185 28 28 / var(--tw-text-opacity));
+}
 span.base-text,
   p.base-text {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
   text-align: justify;
+  --tw-text-opacity: 1;
+  color: rgb(30 41 59 / var(--tw-text-opacity));
+}
+span.base-text-red,
+  p.base-text-red {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  text-align: justify;
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+span.sm-text,
+  p.sm-text {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  text-align: justify;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   --tw-text-opacity: 1;
   color: rgb(30 41 59 / var(--tw-text-opacity));
 }
@@ -680,6 +742,10 @@ h5.title {
   margin-left: auto;
   margin-right: auto;
 }
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -687,8 +753,14 @@ h5.title {
 .-mt-2 {
   margin-top: -0.5rem;
 }
-.ml-10 {
-  margin-left: 2.5rem;
+.ml-5 {
+  margin-left: 1.25rem;
+}
+.mt-5 {
+  margin-top: 1.25rem;
+}
+.mt-6 {
+  margin-top: 1.5rem;
 }
 .mt-96 {
   margin-top: 24rem;
@@ -698,6 +770,9 @@ h5.title {
 }
 .flex {
   display: flex;
+}
+.table {
+  display: table;
 }
 .contents {
   display: contents;
@@ -742,6 +817,9 @@ h5.title {
 .list-inside {
   list-style-position: inside;
 }
+.list-outside {
+  list-style-position: outside;
+}
 .list-decimal {
   list-style-type: decimal;
 }
@@ -775,11 +853,23 @@ h5.title {
 .gap-4 {
   gap: 1rem;
 }
+.gap-5 {
+  gap: 1.25rem;
+}
+.gap-6 {
+  gap: 1.5rem;
+}
 .gap-8 {
   gap: 2rem;
 }
 .rounded {
   border-radius: 0.25rem;
+}
+.rounded-md {
+  border-radius: 0.375rem;
+}
+.rounded-sm {
+  border-radius: 0.125rem;
 }
 .rounded-xl {
   border-radius: 0.75rem;
@@ -805,6 +895,10 @@ h5.title {
 .border-gray-100 {
   --tw-border-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-border-opacity));
+}
+.border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 .border-slate-200 {
   --tw-border-opacity: 1;
@@ -836,8 +930,14 @@ h5.title {
 .stroke-amber-500 {
   stroke: #f59e0b;
 }
+.p-3 {
+  padding: 0.75rem;
+}
 .p-4 {
   padding: 1rem;
+}
+.p-5 {
+  padding: 1.25rem;
 }
 .p-7 {
   padding: 1.75rem;
@@ -849,6 +949,10 @@ h5.title {
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .px-8 {
   padding-left: 2rem;
@@ -866,6 +970,12 @@ h5.title {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+.pl-10 {
+  padding-left: 2.5rem;
+}
+.pl-8 {
+  padding-left: 2rem;
+}
 .text-center {
   text-align: center;
 }
@@ -875,6 +985,10 @@ h5.title {
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+.text-base\/7 {
+  font-size: 1rem;
+  line-height: 1.75rem;
 }
 .text-lg {
   font-size: 1.125rem;
@@ -890,6 +1004,12 @@ h5.title {
 .font-semibold {
   font-weight: 600;
 }
+.uppercase {
+  text-transform: uppercase;
+}
+.italic {
+  font-style: italic;
+}
 .text-blue-400 {
   --tw-text-opacity: 1;
   color: rgb(96 165 250 / var(--tw-text-opacity));
@@ -897,6 +1017,14 @@ h5.title {
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+.text-gray-800 {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+.text-orange-500 {
+  --tw-text-opacity: 1;
+  color: rgb(249 115 22 / var(--tw-text-opacity));
 }
 .text-slate-500 {
   --tw-text-opacity: 1;
@@ -924,6 +1052,13 @@ h5.title {
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+.outline {
+  outline-style: solid;
+}
+.drop-shadow-lg {
+  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -950,6 +1085,11 @@ h5.title {
 .hover\:border-blue-300:hover {
   --tw-border-opacity: 1;
   border-color: rgb(147 197 253 / var(--tw-border-opacity));
+}
+
+.hover\:bg-blue-300:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(147 197 253 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-slate-100:hover {
