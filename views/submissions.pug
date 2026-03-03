@@ -2,3 +2,28 @@ extends _layout
 
 block main
   +breadCrump([{name:"Home", link:"/"}, {name:"Submissions", link:"/submissions"}])
+
+  h2.title Submissions
+
+  .w-full.py-6.px-4.border-l-4.border-emerald-700.border-emerald-500.bg-gray-200
+    p.text-sm.font-normal.text-gray-700 
+      a(href="/login", class="text-blue-500 hover:text-blue-700 hover:underline") Login
+      |  or 
+      a(href="/register", class="text-blue-500 hover:text-blue-700 hover:underline") Register
+      |  to make a submission.
+  
+  form.flex.flex-col.gap-4.my-5
+    .flex.gap-2
+      +input("Title of Papers", "title", "title", "text", "XYZ", true)
+      +input("Type of Papers", "userSubject", "subject", "text", "Subject", true)
+    .flex.gap-2
+      +input("Corresponding Author's Name", "correspondingAuthor", "author", "text", "Sandeep Sigh", true)
+      +input("Corresponding Author's Email", "correspondingAuthorEmail", "email", "email", "abc@xyz.com", true)
+    .flex.gap-2
+      +input("Corresponding Author's Mobile", "correspondingAuthorMobile", "mobile", "text", "1234567890", true)
+    
+    +input("Attach Article/Paper/Manuscript (Only MS Word Files)", "file", "file", "file", "", true, "application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, .doc,.docx")
+
+    +input("Attach Other Docx", "file", "file", "file", "", false)
+
+    +button("Submit")

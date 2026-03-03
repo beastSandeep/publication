@@ -143,3 +143,9 @@ exports.getLibrariansPage = (req, res) => {
     title: "publication.com : For Librarians",
   });
 };
+
+exports.getContactPage = (req, res) => {
+  res.status(200).render("contact", {
+    title: "publication.com : Contact Us",
+  });
+};

@@ -1,0 +1,15 @@
+extends _layout
+
+block main
+  +breadCrump([{name:"Home", link:"/"}, {name:"Contact Us", link:"/contact"}])
+  h2.title Contact Us
+
+  form.flex.flex-col.gap-4
+    .flex.gap-2
+      +input("Name", "userName", "name", "text", "Your Name", true)
+      +input("Subject", "userSubject", "subject", "text", "Subject", true)
+    .flex.gap-2
+      +input("Phone Number", "userPhone", "phone", "text", "Your Phone Number", false)
+      +input("Email", "userEmail", "email", "email", "Your Email", true)
+    +textArea("Message", "userMessage", "message", "text", "Your Message", true)
+    +button("Send Message")

@@ -40,6 +40,8 @@ router.get("/readers", viewsController.getReadersPage);
 router.get("/authors", viewsController.getAuthorsPage);
 router.get("/librarians", viewsController.getLibrariansPage);
 
+router.get("/contact", viewsController.getContactPage);
+
 // router.use(authController.isLoggedIn);
 
 // router.get("/about", viewsController.getAbout);

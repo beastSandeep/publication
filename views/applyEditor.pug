@@ -2,3 +2,28 @@ extends _layout
 
 block main
   +breadCrump([{name:"Home", link:"/"}, {name:"Apply for Editor", link:"/apply-editor"}])
+  h2.title Apply For Editorial Board Member
+
+  .w-full.py-6.px-4.border-l-4.border-emerald-700.border-emerald-500.bg-gray-200
+    p.text-sm.font-normal.text-gray-700 
+      a(href="/login", class="text-blue-500 hover:text-blue-700 hover:underline") Login
+      |  or 
+      a(href="/register", class="text-blue-500 hover:text-blue-700 hover:underline") Register
+      |  to make a submission.
+  
+  form.flex.flex-col.gap-4.my-5
+    .flex.gap-2
+      +input("Name", "name", "name", "text", "Your Name", true)
+      +input("Email", "userEmail", "email", "email", "abc@xyz.com", true)
+    .flex.gap-2
+      +input("Contact Number", "contactNumber", "contactNumber", "number", "0123456789", true)
+      +input("Degree", "degree", "degree", "text", "Your Degree", true)
+
+    +input("Department and college", "departmentCollege", "departmentCollege", "text", "Your Department and College", true)
+
+    .flex.gap-2
+      +input("Choose resume", "resume", "resume", "file", "", true, ".pdf,.doc,.docx,.txt,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain", false)
+      +input("Choose Photo", "photo", "photo", "file", "", true, ".jpg,.jpeg,.png,.gif,image/jpeg,image/png,image/gif", false)
+
+    +textArea("Current Post", "currentPost", "currentPost", "text", "Write your current post here...", true)
+    +button("Submit")
