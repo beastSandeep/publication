@@ -1,0 +1,12 @@
+extends _layout
+
+block main
+  +breadCrump([{name:"Home", link:"/"}, {name:"Search", link:"/search"}])
+  
+  form.flex.flex-col.gap-1
+    h2.title Search By Title
+    +input("Title", "searchTitle", "title", "text", "Title", false)
+    h2.title Search By Author
+    +input("Author", "searchAuthor", "author", "text", "Author", false)
+    +button("Search")
+    

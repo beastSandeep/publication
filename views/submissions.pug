@@ -13,13 +13,13 @@ block main
       |  to make a submission.
   
   form.flex.flex-col.gap-4.my-5
-    .flex.gap-2
+    .flex.gap-2(class="flex-wrap sm:flex-nowrap")
       +input("Title of Papers", "title", "title", "text", "XYZ", true)
       +input("Type of Papers", "userSubject", "subject", "text", "Subject", true)
-    .flex.gap-2
+    .flex.gap-2(class="flex-wrap sm:flex-nowrap")
       +input("Corresponding Author's Name", "correspondingAuthor", "author", "text", "Sandeep Sigh", true)
       +input("Corresponding Author's Email", "correspondingAuthorEmail", "email", "email", "abc@xyz.com", true)
-    .flex.gap-2
+    .flex.gap-2(class="flex-wrap sm:flex-nowrap")
       +input("Corresponding Author's Mobile", "correspondingAuthorMobile", "mobile", "text", "1234567890", true)
     
     +input("Attach Article/Paper/Manuscript (Only MS Word Files)", "file", "file", "file", "", true, "application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, .doc,.docx")

@@ -22,12 +22,12 @@ html(lang="en")
 
     link(href="/styles/style.css", rel="stylesheet")
   body
-    main(class="w-[60%] border-[1px] border-gray-100 mx-auto my-8 shadow-lg")
+    main(class="w-full lg:w-[72rem] border-[1px] border-gray-100 mx-auto my-8 shadow-lg")
       include ./comps/loginAndRegister
       include ./comps/navbar
-      section.flex
-        div.relative(class="w-[75%] p-7")
+      section.flex(class="flex-wrap lg:flex-nowrap")
+        div.relative(class="lg:w-[75%] p-7")
           block main
-        div.relative.border-l.border-slate-200(class="w-[25%] p-7")
+        div.relative.border-l.border-slate-200(class="lg:w-[25%] p-7")
           include ./comps/sidePannel
       include ./comps/footer

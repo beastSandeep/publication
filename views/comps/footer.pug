@@ -6,7 +6,7 @@ mixin block(link,title,description)
 
 
 section.flex.flex-col.px-8.py-10.gap-10.bg-slate-50.border-t.border-slate-200
-  .flex.gap-10
+  .flex.gap-10(class="flex-wrap md:flex-nowrap justify-center")
     +block("/images/svg/search.svg", "Google Searchable", "All published articles are indexed and searchable on Google and other search engines.")
     +block("/images/svg/badge.svg", "ISSN & DOI", "Registered ISSN: with DOI for every published paper.")
     +block("/images/svg/globe.svg", "World-Class Editorial Team", "Editors & reviewers from over 20+ countries.")

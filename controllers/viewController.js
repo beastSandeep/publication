@@ -149,3 +149,18 @@ exports.getContactPage = (req, res) => {
     title: "publication.com : Contact Us",
   });
 };
+exports.getSearchPage = (req, res) => {
+  res.status(200).render("search", {
+    title: "publication.com : Search",
+  });
+};
+exports.getLoginPage = (req, res) => {
+  res.status(200).render("login", {
+    title: "publication.com : Login",
+  });
+};
+exports.getRegisterPage = (req, res) => {
+  res.status(200).render("register", {
+    title: "publication.com : Register",
+  });
+};

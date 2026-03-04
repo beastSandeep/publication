@@ -1,0 +1,23 @@
+include ./comps/mixin
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title= `${title}`
+    link(rel="icon", href="/images/favicon.jpg", type="image/jpg")
+    link(href="/styles/style.css", rel="stylesheet")
+    script(src="/scripts/register.js", defer)
+  body
+    .flex.justify-center.items-center.min-h-screen.bg-blue-400
+      .bg-white.p-8.rounded-lg.shadow-lg.w-full.max-w-md
+        h2.text-2xl.font-bold.mb-6.text-center Register
+        form(action="/register", method="POST", class="space-y-4")
+          +input("Name", "userName", "name", "text", "Enter your name", true)
+          +input("Email", "userEmail", "email", "email", "Enter your email", true)
+          +input("Password", "userPassword", "password", "password", "Enter your password", true)
+          +input("Confirm Password", "userConfirmPassword", "password", "password", "Confirm your password", true)
+          +button("Register","w-full")
+          hr
+          .text-center
+            a.text-sm.text-blue-500(href="/login", class="hover:underline") Already have an account? 

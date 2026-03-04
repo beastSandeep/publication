@@ -1,6 +1,6 @@
 const express = require("express");
 const viewsController = require("../controllers/viewController");
-
+// console.log(Object.keys(viewsController).length);
 const router = express.Router();
 
 router.get("/", viewsController.getLandingPage);
@@ -41,6 +41,9 @@ router.get("/authors", viewsController.getAuthorsPage);
 router.get("/librarians", viewsController.getLibrariansPage);
 
 router.get("/contact", viewsController.getContactPage);
+router.get("/search", viewsController.getSearchPage);
+router.get("/login", viewsController.getLoginPage);
+router.get("/register", viewsController.getRegisterPage);
 
 // router.use(authController.isLoggedIn);
 
