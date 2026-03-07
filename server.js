@@ -32,7 +32,7 @@ mongoose
     console.log("Database Connected");
   });
 
-const server = app.listen(process.env.PORT, () => {
+const server = app.listen(process.env.PORT, "0.0.0.0", () => {
   console.log(
     `server is listening on ${process.env.PORT}.....\nhttp://127.0.0.1:${process.env.PORT}`,
   );

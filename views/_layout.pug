@@ -4,7 +4,7 @@ html(lang="en")
   head
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
     link(rel="icon", href="/images/favicon.jpg", type="image/jpg")
     //-link(rel="canonical" href=`${canonicalURL}`)
     //-meta(itemprop='url', content='https:///')
@@ -26,8 +26,8 @@ html(lang="en")
       include ./comps/loginAndRegister
       include ./comps/navbar
       section.flex(class="flex-wrap lg:flex-nowrap")
-        div.relative(class="lg:w-[75%] p-7")
+        div.relative(class="w-full lg:w-[75%] p-7")
           block main
-        div.relative.border-l.border-slate-200(class="lg:w-[25%] p-7")
+        div.relative.border-l.border-slate-200(class="w-full lg:w-[25%] p-7")
           include ./comps/sidePannel
       include ./comps/footer

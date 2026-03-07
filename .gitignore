@@ -1,5 +1,4 @@
 node_modules/
 research/
-*.excalidraw
-*.pur
+commands/
 #rm -f ./.git/index.lock

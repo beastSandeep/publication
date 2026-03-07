@@ -1,0 +1,21 @@
+extends _layout
+
+block content
+  section.flex.justify-between.items-center.px-4.py-4
+    h1.font-bold.text-xl.text-gray-800 Articles
+    .flex.gap-4.items-center
+      +select("time", "date", [{value:"a", name:"a"}, {value:"b", name:"b"}, {value:"c", name:"c"}])
+      +select("time", "date", [{value:"a", name:"a"}, {value:"b", name:"b"}, {value:"c", name:"c"}])
+      +search()
+      +button("Search")
+  hr
+  section.flex.items-center.justify-between.px-4.py-4
+    section.flex.gap-2.items-center
+      +button("add")
+      //- +button("remove")
+    section.flex.gap-4.items-center
+      p.text-sm.text-gray-600 Page 1 of 53
+      button <
+      button >
+  section
+    +article(["Title", "Authors", "Article Type", "DOI", "Year"], articles)

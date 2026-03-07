@@ -1,0 +1,14 @@
+include ./comps/mixin
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="icon", href="/images/favicon.jpg", type="image/jpg")
+    title= `${title}`
+    link(href="/styles/style.css", rel="stylesheet")
+  body
+    main.flex.flex-col.justify-center.items-center.bg-gray-100(class="h-screen")
+      p(class="text-red-600 font-bold text-xl text-center mb-5") #{statusCode} - #{msg}
+      a(href="/", class="bg-blue-500 text-white text-center rounded-md px-3 py-3 font-medium text-base cursor-pointer shadow-lg hover:shadow-none transition-all") Home

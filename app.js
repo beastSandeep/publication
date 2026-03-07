@@ -15,7 +15,10 @@ const compression = require("compression");
 
 const requestIp = require("request-ip");
 
+const AppError = require("./utils/appError");
+const globalErrorHandler = require("./controllers/errorController");
 const viewRouter = require("./routes/viewRouter");
+const adminRouter = require("./routes/adminRouter");
 
 const app = express();
 
@@ -38,6 +41,27 @@ if (process.env.NODE_ENV === "development") {
 }
 
 app.use(helmet());
+// app.use(
+//   helmet.contentSecurityPolicy({
+//     directives: {
+//       defaultSrc: ["'self'"],
+//       scriptSrc: [
+//         "'self'",
+//         "'unsafe-inline'",
+//         "'unsafe-eval'",
+//         "https://www.googletagmanager.com",
+//         "https://www.google-analytics.com",
+//         "https://pagead2.googlesyndication.com",
+//         "https://partner.googleadservices.com",
+//         "https://tpc.googlesyndication.com",
+//         "https://region1.google-analytics.com",
+//       ],
+//       styleSrc: ["'self'", "'unsafe-inline'", "https:"],
+//       imgSrc: ["'self'", "data:", "https:"],
+//       fontSrc: ["'self'", "https:", "data:"],
+//     },
+//   }),
+// );
 
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
@@ -91,13 +115,14 @@ const limiter = rateLimit({
 app.use("/", limiter);
 
 app.use("/", viewRouter);
+app.use("/admin", adminRouter);
 
 // app.use("/api/v1/users", userRouter);
 
 app.all("*", (req, res, next) => {
-  // next(new AppError(`Can't find "${req.originalUrl}" on publication`, 404));
+  next(new AppError(`Can't find "${req.originalUrl}" on publication`, 404));
 });
 
-// app.use(globalErrorHandler);
+app.use(globalErrorHandler);
 
 module.exports = app;
