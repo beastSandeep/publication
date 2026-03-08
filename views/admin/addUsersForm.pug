@@ -1,0 +1,38 @@
+//- all mixin are in views/admin/__mixins
+
+#add_users_form.hidden.fixed.z-50.w-full.h-screen.top-0.left-0.bg-black.flex.justify-center.items-center(class="bg-black/80")
+  form.p-8.bg-white.rounded.flex.flex-col.gap-4.overflow-y-scroll(class="w-[70rem] h-[90%]")
+    h1.text-center.my-2.text-2xl.font-bold.bg-gray-200.py-2 Add Editor
+    
+    section.flex.gap-4.items-center
+      +input("Editor Name","title","title", "text", "John", true)
+      +select2("Type of Editor", "editor_type", "editor_type",  [{ name: "Select Editor Type", value: "null" }])
+      +select2("Current Position", "current_position", "current_position",  [{ name: "Select Current Position", value: "null" }])
+    section.flex.gap-4.items-center
+      +input("University / College Name","collage","collage", "text", "John", true)
+      +select2("Country", "country", "country",  [{ name: "Select Country", value: "null" }, {name:"India", value: "india"}])
+      +input("Digree","digree", "digree", "text", "John", true)
+    section.flex.gap-4.items-center
+      +input("Institutional Email","email","email", "email", "abc@xyz.com", true)
+      +input("Phone No","phone", "phone", "number", "1234567890", true)
+      +input("Inst. Profile link","profile_link", "profile_link", "url", "https://google.com", true)
+
+    section.flex.gap-4.items-center
+      +input("ORCID","orcid", "orcid", "text", "1234-234", true)
+        +radios("is_orcid_active", [{name:"Active", value:"active"},{name:"Deactive", value:"deactive"}])
+      +input("Google Scholar","google_scholar", "google_scholar", "text", "1234-234", true)
+        +radios("is_google_scholar_active", [{name:"Active", value:"active"},{name:"Deactive", value:"deactive"}])
+      +input("Scopus","scopus", "scopus", "text", "1234-234", true)
+        +radios("is_scopus_active", [{name:"Active", value:"active"},{name:"Deactive", value:"deactive"}])
+
+    section.flex.gap-4.items-center
+      +input("Research Gate ID","research_gate_id", "research_gate_id", "text", "1234-234", true)
+        +radios("is_research_gate_id_active", [{name:"Active", value:"active"},{name:"Deactive", value:"deactive"}])
+      +input("Publons","publons", "publons", "text", "1234-234", true)
+        +radios("is_publons_active", [{name:"Active", value:"active"},{name:"Deactive", value:"deactive"}])
+      +input("Linkedin","linkedin", "linkedin", "text", "1234-234", true)
+        +radios("is_linkedin_active", [{name:"Active", value:"active"},{name:"Deactive", value:"deactive"}])
+
+    +select2("Editor Activate/Deactivate", "editor_status", "editor_status",  [{ name: "Select Editor Status", value: "null" }])
+    +input("Upload Editor","uploaded_editor","uploaded_editor","file","xyz", true, null, "*", false)
+    +button("Submit", "py-2 my-5", "submit")

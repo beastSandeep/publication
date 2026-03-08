@@ -11,7 +11,7 @@ const authorSchema = new mongoose.Schema({
     type: String,
     trim: true,
   },
-  orcidId: {
+  orcid: {
     type: String,
     trim: true,
   },
@@ -30,17 +30,24 @@ const ArticleSchema = new mongoose.Schema(
     articleType: {
       type: String,
       enum: [
-        "Review Paper",
-        "Research Paper",
-        "Case Report",
-        "Book Review",
-        "Short Communication",
-        "Conference Proceedings",
+        "review_paper",
+        "research_paper",
+        "case_report",
+        "book_review",
+        "short_communication",
+        "conference_proceedings",
       ],
     },
 
-    subject: String,
-    country: String,
+    subject: {
+      type: String,
+      trim: true,
+    },
+    country: {
+      type: String,
+      enum: ["india"],
+      trim: true,
+    },
 
     receivedDate: Date,
     acceptedDate: Date,
@@ -59,7 +66,7 @@ const ArticleSchema = new mongoose.Schema(
       maxlength: 4000,
     },
 
-    aimObjectives: {
+    aimOfStudy: {
       type: String,
       maxlength: 4000,
     },
@@ -89,18 +96,18 @@ const ArticleSchema = new mongoose.Schema(
     month: {
       type: String,
       enum: [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
+        "january",
+        "february",
+        "march",
+        "april",
+        "may",
+        "june",
+        "july",
+        "august",
+        "september",
+        "october",
+        "november",
+        "december",
       ],
     },
 

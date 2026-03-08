@@ -7,13 +7,13 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1")
     link(rel="icon", href="/images/favicon.jpg", type="image/jpg")
     title= `${title}`
-    block header
+    block head
     link(href="/styles/style.css", rel="stylesheet")
     script(src="/scripts/admin.js", defer)
   body.overflow-hidden
     main.flex.h-screen.bg-gray-100
       section#verticalNavigation(class="w-fit h-screen border-r-2 border-gray-300 relative transition-all")
         include ./_verticalNavigation
-      section.flex-1.bg-slate-50.w-full.h-screen.overflow-y-scroll
+      section.flex-1.w-full.bg-white.h-screen.overflow-y-scroll.relative
         include ./_header
         block content

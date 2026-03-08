@@ -1,9 +1,14 @@
-section(class="w-full bg-gray-200 flex items-center justify-between px-4 py-2 border-b-2 border-gray-300 text-sm")
-  .flex.items-center.gap-4
-    p Export
-    p Import
-  .flex.items-center.gap-4
-    button(class="px-4 py-2 bg-blue-500 text-white rounded") Refresh
-    .flex.items-center.gap-1
-      img(src="/images/avatar.png", alt="avatar", class="w-8 h-8 rounded-full")
-      span Admin
+.flex.w-full.border-b.border-gray-200.px-2.items-center(class='min-h-[3rem] dark:border-gray-800 sm:px-10')
+  nav.flex.items-center.h-full.text-gray-600(class='dark:text-gray-400')
+    span.cursor-pointer.h-full.border-b-2.inline-flex.items-center.mr-2.select-none.border-transparent(class='sm:mr-8') Export
+    span.cursor-pointer.h-full.border-b-2.inline-flex.items-center.mr-2.select-none.border-transparent(class='sm:mr-8') Import
+  .ml-auto.flex.items-center.space-x-2(class='sm:space-x-7')
+    +button("Refresh")
+    button.flex.items-center.cursor-auto
+      span.relative.flex-shrink-0
+        img.w-7.h-7.rounded-full(src='/images/avatar.png', alt='profile')
+        span.absolute.right-0.bottom-0.w-2.h-2.rounded-full.bg-green-500.border.border-white(class='-mb-0.5 dark:border-gray-900')
+      span.ml-2 Admin
+      .transition-all.ml-1.duration-200.ease-in-out
+        svg.w-4.flex-shrink-0(viewBox='0 0 24 24', stroke='currentColor', stroke-width='2', fill='none', stroke-linecap='round', stroke-linejoin='round')
+          polyline(points='6 9 12 15 18 9')

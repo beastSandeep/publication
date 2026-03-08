@@ -1,0 +1,49 @@
+//- all mixin are in views/admin/__mixins
+
+#add_article_form.hidden.fixed.z-50.w-full.h-screen.top-0.left-0.bg-black.flex.justify-center.items-center(class="bg-black/80")
+  form.p-8.bg-white.rounded.flex.flex-col.gap-4.overflow-y-scroll(class="w-[70rem] h-[90%]")
+    h1.text-center.my-2.text-2xl.font-bold.bg-gray-200.py-2 Add Article
+    +input("Article Title","title","title", "text", "John", true)
+    main
+      section#author-1.authors.flex.gap-4.items-center
+        +input("Author Name","name","name", "text", "xyz", true)
+        +input("Author Affiliation","affiliation","affiliation", "text", "xyz", true)
+        +input("Author Orcid id","orcid","orcid", "text", "xyz", true)
+        +button("Remove","mt-8 py-2")
+    +button("Add Author", "py-2")
+    +select2("Article Type", "type", "type",  [{ name: "Select Paper Type", value: "null" }, { name: "Review Paper", value: "review_paper" },  { name: "Research Paper", value: "research_paper" },  { name: "Case Report", value: "case_report" }, { name: "Book Review", value: "book_review" }, { name: "Short Communication", value: "short_communication" }, { name: "Conference Proceedings", value: "conference_proceedings" }])
+    
+    section.flex.gap-4.items-center.flex-wrap
+      +input("Subject","subject","subject", "text", "xyz", true)
+      +select2("Country", "country", "country",  [{ name: "Select Country", value: "null" }, {name:"India", value: "india"}])
+      +input("Received Date","received_date","received_date", "date", "", true)
+      +input("Accepted Date","accepted_date","accepted_date", "date", "", true)
+      +input("Revised Date","revised_date","revised_date", "date", "", true)
+      +input("Published Date","published_date","published_date", "date", "", true)
+    
+    section.flex.gap-4.items-center.flex-wrap
+      +input("Abstract","abstract","abstract","text","xyz", true)
+      +input("Keywords","keywords","keywords","text","xyz", true)
+      +input("Introduction","introduction","introduction","text","xyz", true)
+      +input("Aim of Study/Objectives","aim_of_study","aim_of_study","text","xyz", true)
+    
+    section.flex.gap-4.items-center.flex-wrap
+      +input("Methods","methods","methods","text","xyz", true)
+      +input("Discussion ","discussion","discussion","text","xyz", true)
+      +input("Conclusion","conclusion","conclusion","text","xyz", true)
+      +input("References","references","references","text","xyz", true)
+    
+    section.flex.gap-4.items-center.flex-wrap
+      +input("DOI (full url)","doi","doi","url","xyz", true)
+      +select2("Month", "month", "month",  [{ name: "Select Month", value: "null" }, {name:"January", value: "january"}])
+      +input("Reference No.","rference_no","rference_no","text","xyz", true)
+      +input("Year","year","year","number","xyz", true, 2024)
+      +input("Volume","volume","volume","number","xyz", true)
+      +input("Issue","issue","issue","number","xyz", true)
+      +input("File Name with Extension","file_name_with_extension","file_name_with_extension","text","xyz", true)
+      +input("Page No","page_no","page_no","text","xyz", true)
+      +input("Upload Article","uploaded_file","uploaded_file","file","xyz", true, null, "*", false)
+
+    +button("Submit", "py-2 my-5", "submit")
+
+

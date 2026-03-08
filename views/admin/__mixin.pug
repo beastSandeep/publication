@@ -1,44 +1,77 @@
-mixin input(labelText, inputId, inputName, inputType="text", placeholder="", required=true, accept="*", multiple=true)
-  div.flex-1(class="min-w-[250px]")
-    label(for=inputId, class="block text-gray-700 mb-2 font-medium cursor-pointer") #{`${labelText} `}
-      span.text-red-500 #{required ? "*" : ""}
-    input(type=inputType, name=inputName, required=required, placeholder=placeholder, id=inputId, class="border border-gray-300 rounded-md py-2 px-4 w-full placeholder:font-light placeholder:text-base placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all", accept=accept, multiple=multiple)
+mixin button(name, classes="", type="button")
+  button.h-8.px-3.rounded-md.shadow.text-white.bg-blue-400.transition-all.duration-100.ease-in.flex.items-center.justify-center(class=`hover:bg-blue-500 ${classes}`, id=`${name.split(" ").join("_").toLowerCase()+"_btn"}`, type=type)= name
 
-mixin textArea(labelText, textAreaId, inputName, inputType="text", placeholder="", required=true)
-  div.flex-1(class="min-w-[250px]")
-    label(for=textAreaId, class="block text-gray-700 mb-2 font-medium cursor-pointer") #{`${labelText}${required ? " *" : ""}`}
-    textarea(name=inputName, required=required, placeholder=placeholder, id=textAreaId, class="border border-gray-300 rounded-md py-2 px-4 w-full placeholder:font-light placeholder:text-base placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-color", rows="5")
-
-mixin button(buttonText, classes="")
-  button(type="submit", id="submit-btn",  class=`bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition-all ${classes}`) #{buttonText}                                                          
-
-
-mixin select(name, id, options)
-  select(name=name, id=id)
+mixin select(id, name, options)
+  select.px-2.h-10.bg-transparent.border.border-gray-300.rounded-md.text-sm(name=name, id=id, class='dark:bg-gray-900 dark:border-gray-700 dark:text-white')
     each option in options
-      option(value=option.value) #{option.name}
+      option(title=option.title, value=option.value) #{option.name}
 
-mixin search()
-  input#search(type="search", name="search")
+mixin select2(labelText, selectId, selectName, options, required=true)
+  div.flex-1(class="min-w-[250px]")
+    div.flex.gap-2.items-center.mb-1
+      label(for=selectId, class="text-gray-700 font-medium cursor-pointer") #{labelText} 
+        span.text-red-500 #{required ? "*" : ""}
+      if block
+        block
+    select(name=selectName, id=selectId, required=required,class="border border-gray-300 rounded-md py-2 px-4 w-full text-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all dark:bg-gray-900 dark:border-gray-700 dark:text-white")
+      each option, index in options
+        if index === 0
+          option(value=option.value, selected=true, disabled=true) #{option.name} 
+        else
+          option(value=option.value) #{option.name}
 
-mixin table(tableTitles, tableRows)
-  table.table-fixed
+mixin searchInput(id, name)
+  .relative
+    input.pl-8.h-9.bg-transparent.border.border-gray-300.w-full.rounded-md.text-sm(type='text', name=name, id=id, class='dark:border-gray-700 dark:text-white', placeholder='Search')
+    svg.w-4.absolute.text-gray-400.transform.left-2(viewBox='0 0 24 24', class='top-1/2 translate-x-0.5 -translate-y-1/2', stroke='currentColor', stroke-width='2', fill='none', stroke-linecap='round', stroke-linejoin='round')
+      circle(cx='11', cy='11', r='8')
+      line(x1='21', y1='21', x2='16.65', y2='16.65')
+
+mixin input(labelText, inputId, inputName, inputType="text", placeholder="", required=true, value=null, accept="*", multiple=true)
+  div.flex-1(class="min-w-[250px]")
+    div.flex.gap-2.items-center.mb-1
+      label(for=inputId, class="text-gray-700 font-medium cursor-pointer") #{`${labelText} `}
+        span.text-red-500 #{required ? "*" : ""}
+      if block
+        block
+    input(type=inputType, name=inputName, required=required, placeholder=placeholder, id=inputId, value=value, class="border border-gray-300 rounded-md py-2 px-4 w-full placeholder:font-light placeholder:text-base placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all", accept=accept, multiple=multiple)
+
+mixin radios(name, arr)
+  each data in arr
+    label.flex.items-center.gap-2.text-sm.text-gray-600
+      input(type='radio', name=name, value=data.value)
+      | #{data.name}
+
+
+mixin tab(name)
+  button.px-3.border-b-2.border-blue-500.text-blue-500(class='pb-1.5 dark:text-blue-200', id=`${name.toLowerCase()+"_action"}`)= name
+
+mixin actions()
+  .flex.w-full.items-center.my-7
+    .ml-auto.text-gray-500.text-xs.hidden.items-center(class='dark:text-gray-200 sm:inline-flex')
+      span.mr-3 Page 1 of 1
+      button.inline-flex.mr-2.items-center.h-8.w-8.justify-center.text-gray-500.rounded-md.shadow.border.border-gray-200.leading-none.py-0(class='dark:text-gray-200 dark:border-gray-600 hover:bg-gray-100 hover:text-gray-600')
+        svg.w-4(viewBox='0 0 24 24', stroke='currentColor', stroke-width='2', fill='none', stroke-linecap='round', stroke-linejoin='round')
+          polyline(points='15 18 9 12 15 6')
+      button.inline-flex.mr-2.items-center.h-8.w-8.justify-center.text-gray-500.rounded-md.shadow.border.border-gray-200.leading-none.py-0(class='dark:text-gray-200 dark:border-gray-600 hover:bg-gray-100 hover:text-gray-600')
+        svg.w-4(viewBox='0 0 24 24', stroke='currentColor', stroke-width='2', fill='none', stroke-linecap='round', stroke-linejoin='round')
+          polyline(points='9 18 15 12 9 6')
+      if block
+        block
+  
+
+mixin table(tableTitles)
+  table.w-full.text-left
     thead
-      tr
+      tr.text-gray-400
         each tableTitle in tableTitles
-          th= tableTitle
-    tbody
-      each tableData in tableRows
-        tr
-          each tableTitle in tableTitles
-            - let key = tableTitle.split(" ").join("_").toLowerCase();
-            - let data = tableData[key];
-            td= `${Array.isArray(data) ? data[0].name : data}`
+          th.font-normal.px-3.pt-0.pb-3.border-b.border-gray-200(class='dark:border-gray-800')= tableTitle
+    if block
+      block
+    
 
-
-
-
+mixin pagination()
+  .flex.w-full.mt-5.space-x-2.justify-end.select-none
+    button.inline-flex.items-center.h-8.w-8.justify-center.rounded-md.shadow.border.border-gray-200.bg-gray-100.leading-none.text-white.bg-gray-500.border-gray-600(class='dark:border-gray-800 dark:bg-gray-800 dark:text-white') 1
 //- page specifics
 
-mixin article(titles, data)
-  +table(titles, data)

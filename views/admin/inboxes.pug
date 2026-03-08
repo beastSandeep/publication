@@ -1,4 +1,74 @@
 extends _layout
 
 block content
-  h1 inboxes
+  div(class="flex-grow bg-white dark:bg-gray-900")
+    .px-4.pt-4.flex.flex-col.w-full.border-b.border-gray-200.bg-white.sticky.z-10.top-0(class='sm:px-7 sm:pt-7 dark:bg-gray-900 dark:text-white dark:border-gray-800')
+      // title
+      .flex.w-full.items-center
+        .flex.items-center.text-3xl.text-gray-900(class='dark:text-white') Inboxes
+        //- filters
+        .ml-auto.flex.items-center.gap-1.justify-end
+          form.flex.gap-2.flex-wrap.justify-end(class='sm:gap-6')
+            +select("sort", "sort", [{name:"Newest First", value:"-timeStamp", title:"Newest First"}, {name:"Oldest First", value:"timeStamp", title:"Oldest First"}])
+            +select("limit", "limit", [{name:"20", value:"20", title:"20 / page"}, {name:"50", value:"50", title:"50 / page"}, {name:"100", value:"100", title:"100 / page"}])
+            +searchInput("search", "search")
+            +button("Apply")
+      .flex.items-center.space-x-3.mt-4(class='sm:mt-7')
+        +tab("All")
+        +tab("Contact")
+        +tab("Editor")
+        +tab("Submission")
+    +actions()
+    //- data
+    +table(["ID", "Name", "CV", "Created", "Email"])
+      each row in fake
+        tbody.text-gray-600.border-b.border-gray-200.false(class='dark:text-gray-50 dark:border-gray-800')
+          tr
+            td.py-2.px-1(class='sm:p-3')
+              .flex.items-center.font-medium.gap-2
+                input#654c9890dcd7ce5480822203.w-4(type='checkbox', name='654c9890dcd7ce5480822203')
+                label.select-none.cursor-pointer.font-medium(for='654c9890dcd7ce5480822203')= row["id"]
+                //- div(title='Unsent')
+                //-   svg.w-4.stroke-orange-400(xmlns='http://www.w3.org/2000/svg', width='24', height='24', viewBox='0 0 24 24', fill='none', stroke='currentColor', stroke-width='2', stroke-linecap='round', stroke-linejoin='round')
+                //-     line(x1='22', y1='2', x2='11', y2='13')
+                //-     polygon(points='22 2 15 22 11 13 2 9 22 2')
+            td.py-2.px-1(class='sm:p-3')= row["name"]
+            td.py-2.px-1.hidden(class='sm:p-3 sm:table-cell')
+              .flex.flex-col
+                .flex.items-center.gap-1.underline.underline-offset-2.text-blue-500
+                  a(href=row["url"]) Click Me
+                  svg.w-3(xmlns='http://www.w3.org/2000/svg', width='24', height='24', viewBox='0 0 24 24', fill='none', stroke='currentColor', stroke-width='2', stroke-linecap='round', stroke-linejoin='round')
+                    path(d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6')
+                    polyline(points='15 3 21 3 21 9')
+                    line(x1='10', y1='14', x2='21', y2='3')
+                .text-gray-400.text-xs= row["phone"]
+            td.py-2.px-1.hidden(class='sm:p-3 lg:table-cell')
+              .hidden.flex-col(class='sm:flex')
+                | 09.11.2023
+                .text-gray-400.text-xs 2:00 PM
+            td.py-2.px-1(class='sm:p-3')
+              .flex.items-center.justify-between
+                .hidden(class='md:table-cell')= row["email"]
+                .flex.justify-center.items-center.select-none
+                  .inline-block.relative(class='group/main')
+                    button.w-8.h-8.inline-flex.items-center.justify-center.rounded-md.text-gray-400.ml-auto.transition-all.duration-200.ease-in-out(class='hover:text-gray-50 hover:bg-blue-500')
+                      svg.w-5(viewBox='0 0 24 24', stroke='currentColor', stroke-width='2', fill='none', stroke-linecap='round', stroke-linejoin='round')
+                        circle(cx='12', cy='12', r='1')
+                        circle(cx='19', cy='12', r='1')
+                        circle(cx='5', cy='12', r='1')
+                    ul.bg-slate-50.text-center.rounded.p-2.font-medium.drop-shadow-2xl.border.border-gray-200.transition-all.duration-300.ease-out.absolute.z-50.hidden.right-3.text-gray-700.pt-1(class='group-hover/main:block')
+                      li.cursor-pointer.rounded.px-3.py-1.transition-all.duration-200.ease-in-out(class='hover:text-gray-100 hover:bg-gray-600')
+                        a(rel='noreferrer', target='_blank', href='/about') Link
+                      //-li.cursor-pointer.rounded.px-3.py-1.transition-all.duration-200.ease-in-out(class='hover:text-gray-100 hover:bg-gray-600') Documents
+                      li.cursor-pointer.rounded.px-3.py-1.transition-all.duration-200.ease-in-out(class='group/settings hover:text-gray-100 hover:bg-gray-600 origin-right')
+                        ul.bg-slate-50.text-center.rounded.p-2.font-medium.drop-shadow-2xl.border.border-gray-200.transition-all.duration-300.ease-out.absolute.hidden.text-gray-700.pt-1(class='z-[51] right-[5.45rem] group-hover/settings:block')
+                          li.cursor-pointer.rounded.px-3.py-1.transition-all.duration-200.ease-in-out(class='hover:text-gray-100 hover:bg-gray-600')
+                            | Edit
+                          li.cursor-pointer.text-orange-500.rounded.px-3.py-1.transition-all.duration-200.ease-in-out(class='hover:text-gray-100 hover:bg-orange-500')
+                            | Hide
+                          li.cursor-pointer.text-red-500.rounded.px-3.py-1.transition-all.duration-200.ease-in-out(class='hover:text-gray-100 hover:bg-red-600')
+                            | Delete
+                        | Actions
+    
+    +pagination()
+
